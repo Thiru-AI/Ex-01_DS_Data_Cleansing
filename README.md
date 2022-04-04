@@ -20,4 +20,40 @@ Save the Clean data to the file
 
 
 # CODE
-# OUPUT
+```
+import pandas as pd
+df=pd.read_csv("Data_set.csv")
+print(df)
+df.head(10)
+df.info()
+df.isnull()
+df.isnull().sum()
+df['show_name']=df['show_name'].fillna(df['aired_on'].mode()[0])
+df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
+df['original_network']=df['original_network'].fillna(df['aired_on'].mode()[0])
+df.head()
+df['rating']=df['rating'].fillna(df['rating'].mean())
+df['current_overall_rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
+df.head()
+df['watchers']=df['watchers'].fillna(df['watchers'].median())
+df.head()
+df.info()
+df.isnull().sum()
+```
+# OUTPUT
+# Data:
+![gitlogo](ot1.jpg)
+
+# Non Null Before:
+![gitlogo](op2.jpg)
+# Mode:
+![gitlogo](op3.jpg)
+# Mean:
+![gitlogo](op6.jpg)
+# Median:
+![gitlogo](op6 (1).jpg)
+# Non Null After:
+![gitlogo](op8.jpg)
+![gitlogo](op9.jpg)
+# Result:
+Thus, the given data is read, cleansed and the cleaned data is saved into the file.
